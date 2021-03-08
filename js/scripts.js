@@ -84,3 +84,134 @@ document.getElementById("btnSV").onclick = function () {
 
     document.getElementById("kqBai4").innerHTML = maxSV;
 }
+
+/**
+ * Bài 3:
+ */
+
+document.getElementById("btnRead").onclick = function () {
+    var n = Number(document.getElementById("num").value);
+
+    var hundred = Math.floor(n / 100);
+    var ten = Math.floor((n % 100) / 10);
+    var unit = n % 10;
+
+    console.log(hundred, ten, unit);
+
+    var rH = "";
+    var rHpost = "trăm";
+    var rT = "";
+    var rTpost = "";
+    var rU = "";
+
+    switch (hundred) {
+        case 0:
+            rH = ""; rHpost = ""
+            break;
+        case 1:
+            rH = "Một";
+            break;
+        case 2:
+            rH = "Hai";
+            break;
+        case 3:
+            rH = "Ba";
+            break;
+        case 4:
+            rH = "Bốn";
+            break;
+        case 5:
+            rH = "Năm";
+            break;
+        case 6:
+            rH = "Sáu";
+            break;
+        case 7:
+            rH = "Bảy";
+            break;
+        case 8:
+            rH = "Tám";
+            break;
+        case 9:
+            rH = "Chín";
+            break;
+    }
+
+    switch (ten) {
+        case 0:
+            rT = ""; rTpost = "lẻ";
+            break;
+        case 1:
+            rT = "mười"; rTpost = "";
+            break;
+        case 2:
+            rT = "hai"; rTpost = "mươi";
+            break;
+        case 3:
+            rT = "ba"; rTpost = "mươi";
+            break;
+        case 4:
+            rT = "bốn"; rTpost = "mươi";
+            break;
+        case 5:
+            rT = "năm"; rTpost = "mươi";
+            break;
+        case 6:
+            rT = "sáu"; rTpost = "mươi";
+            break;
+        case 7:
+            rT = "bảy"; rTpost = "mươi";
+            break;
+        case 8:
+            rT = "tám"; rTpost = "mươi";
+            break;
+        case 9:
+            rT = "chín"; rTpost = "mươi";
+            break;
+    }
+
+    switch (unit) {
+        case 0:
+            rU = "";
+            break;
+        case 1:
+            rU = "mốt";
+            break;
+        case 2:
+            rU = "hai";
+            break;
+        case 3:
+            rU = "ba";
+            break;
+        case 4:
+            rU = "bốn";
+            break;
+        case 5:
+            rU = "lăm";
+            break;
+        case 6:
+            rU = "sáu";
+            break;
+        case 7:
+            rU = "bảy";
+            break;
+        case 8:
+            rU = "tám";
+            break;
+        case 9:
+            rU = "chín";
+            break;
+    }
+
+    if (ten == 0 && unit == 0) {
+        rTpost = "";
+    }
+
+    if ((ten == 1 || ten == 0) && unit != 0) {
+        if (unit == 1) {
+            rU = "một";
+        }
+    }
+
+    document.getElementById("kqBai3").innerHTML = `${rH} ${rHpost} ${rT} ${rTpost} ${rU}`;
+}
