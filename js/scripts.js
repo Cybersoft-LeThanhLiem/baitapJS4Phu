@@ -207,10 +207,12 @@ document.getElementById("btnRead").onclick = function () {
         rTpost = "";
     }
 
-    if ((ten == 1 || ten == 0) && unit != 0) {
-        if (unit == 1) {
-            rU = "một";
-        }
+    if ((ten == 1 || ten == 0) && unit == 1) {
+        rU = "một";
+    }
+
+    if (ten == 0 && unit == 5) {
+        rU = "năm";
     }
 
     document.getElementById("kqBai3").innerHTML = `${rH} ${rHpost} ${rT} ${rTpost} ${rU}`;
